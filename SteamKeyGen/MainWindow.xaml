@@ -1,0 +1,40 @@
+﻿<Window x:Class="SteamKeyGen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteamKeyGen"
+        mc:Ignorable="d"
+        Title="Steam Key Generator"
+        ResizeMode="NoResize"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Height="321.429"
+        Width="315.561"
+        Style="{StaticResource CustomToolWindowStyle}">
+    <Grid>
+        <TabControl Name="AppTabControl" Margin="5">
+            <TabItem Name="MainTab" Header="Main" Margin="-2,-2,-38,0">
+                <Grid>
+                    <Label Name="KeyAmountLabel" Content="Number of keys to generate:" FontSize="13" HorizontalContentAlignment="Center" Margin="0,30,0,189"/>
+                    <TextBox Name="KeyAmount" HorizontalContentAlignment="Center" Margin="35,59,35,168" PreviewTextInput="NumberValidationTextBox"/>
+                    <Label Name="OutputLocationLabel" Content="Select output location:" FontSize="13" HorizontalContentAlignment="Center" Margin="0,84,0,137"/>
+                    <TextBox Name="LocationOutput" Margin="35,111,74,116" IsReadOnly="True"/>
+                    <Button Name="SelectOutPutLocation" Content="..." Margin="229,111,35,116" Click="SelectOutPutLocation_Click"/>
+                    <Button Name="GenKeysButton" Content="Generate Keys!" Margin="60,158,60,69" Click="GenKeysButton_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="AboutTab" Header="About" Margin="38,-2,-72,0">
+                <Grid>
+                    <Label Name="NoteMSG" Content="Note for users" Margin="5" HorizontalContentAlignment="Center"/>
+                    <Ellipse Name="MattEllipse" Stroke="#FF2084E8" Margin="199,145,25,29" ToolTip="Open cracked.to Page" MouseDown="MattEllipse_MouseDown">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Image/matt101.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
